@@ -22,11 +22,8 @@ export function Counter() {
 
     const startTimer = () => {
         if (!id) {
-            useEffect(() => {
             const intervalId = setInterval(() => countDown(), 1000);
             setId(intervalId);
-            return () => clearInterval(intervalId);
-            });
         }
     }
 
