@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useState, useRef} from 'react';
 import useTimer from './useTimer';
 
 
@@ -15,6 +15,7 @@ export function Counter() {
     const [minute, setMinute] = useState(0);
     const [second, setSecond] = useState(0);
     const [id, setId] = useState(null);
+    const callbackRef = useRef();
 
     //const [time,resetTime]=useTimer()
 
@@ -22,7 +23,7 @@ export function Counter() {
 
     const startTimer = () => {
         if (!id) {
-            const intervalId = setInterval(() => countDown(), 1000);
+            const intervalId = setInterval( () => {callbackRef.current()}, 1000);
             setId(intervalId);
         }
     }
@@ -49,10 +50,12 @@ export function Counter() {
         // カウントダウンが終了したときの処理
         } else {
             clearInterval(id);
+            setId(null);
         }
     }
-
-
+    useEffect(() => {
+        callbackRef.current = countDown;
+    },[countDown])
 
     return (
         <div>
