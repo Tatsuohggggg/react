@@ -11,3 +11,63 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#title {
+  font-size: 30px;
+}
+
+/* #timerList {
+  padding: 20px;
+  text-align: center;
+  background-color: #ddd;
+  height: 20px;
+} */
+
+#addButton {
+  text-align: center;
+}
+
+#enseiTitle {
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  background-color: aqua;
+  height: 10px;
+}
+
+#nyukyoTitle {
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  background-color: chartreuse;
+  height: 10px;
+} 
+
+#kenzouTitle {
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  background-color: darkred;
+  height: 10px;
+}
+
+#enseiCounter {
+  padding: 20px;
+  text-align: center;
+  background-color:#ddd;
+  height: 20px;
+}
+
+#nyukyoCounter {
+  padding: 20px;
+  text-align: center;
+  background-color: #ddd;
+  height: 20px;
+}
+
+#kenzouCounter {
+  padding: 20px;
+  text-align: center;
+  background-color: #ddd;
+  height: 20px;
+}
