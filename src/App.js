@@ -82,18 +82,20 @@ export function Counter() {
         }
     }
 
+    const nextTiming = () => 1000 - Date.now() % 1000;
+
     // ボタンを押下した際にタイマーを動かしたり止めたりする
     const operateTimer = () => {
         if (buttonText == "スタート") {
-            const intervalId = setInterval(() => { callbackRef.current() }, 1000);
+            const intervalId = setTimeout(countDown(intervalId),nextTiming);
             setId(intervalId);
         } else {
-            clearInterval(id);
+            clearTimeout(id);
         }
     }
 
     // カウントダウン用
-    const countDown = () => {
+    const countDown = (id) => {
         console.log(countMax);
         console.log("呼ばれた回数");
         setCount(c => c + 1);
@@ -121,10 +123,7 @@ export function Counter() {
             setButtonText("スタート");
             settimerOpen(!timerOpen);
         }
-    }
-
-    const timer = () => {
-
+        const intervalId = setTimeout(countDown(), nextTiming);
     }
 
     // 描画されるとカウントダウン関数を実行する
