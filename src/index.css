@@ -16,12 +16,9 @@ code {
   font-size: 30px;
 }
 
-/* #timerList {
-  padding: 20px;
-  text-align: center;
-  background-color: #ddd;
-  height: 20px;
-} */
+#timer {
+  font-size: 30px;
+}
 
 #addButton {
   text-align: center;
@@ -29,45 +26,63 @@ code {
 
 #enseiTitle {
   font-size: 20px;
-  padding: 20px;
   text-align: center;
   background-color: aqua;
-  height: 10px;
 }
 
 #nyukyoTitle {
   font-size: 20px;
-  padding: 20px;
   text-align: center;
   background-color: chartreuse;
-  height: 10px;
 } 
 
 #kenzouTitle {
   font-size: 20px;
-  padding: 20px;
   text-align: center;
   background-color: darkred;
-  height: 10px;
 }
 
 #enseiCounter {
-  padding: 20px;
+  padding: 1px;
   text-align: center;
   background-color:#ddd;
-  height: 20px;
 }
 
 #nyukyoCounter {
-  padding: 20px;
+  padding: 1px;
   text-align: center;
   background-color: #ddd;
-  height: 20px;
 }
 
 #kenzouCounter {
-  padding: 20px;
+  padding: 1px;
   text-align: center;
   background-color: #ddd;
-  height: 20px;
+}
+
+#enseiListDiv {
+  text-align: center;
+}
+
+#enseiList {
+  padding-left: 0;
+	list-style: none;
+	display: inline-block;
+}
+
+#enseiArea {
+  list-style: circle;
+  list-style: none;
+  text-align: center;
+}
+
+#enseiAreaElem {
+  text-align: left;
+  cursor: pointer;
+}
+
+#ensei {
+  border-top: 5px;
+  text-align: left;
+  cursor: pointer;
 }
