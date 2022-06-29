@@ -34,12 +34,20 @@ const App = () => {
                 <p>
                     <Counter />
                 </p>
+
+                <p>
+                    <Counter />
+                </p>
             </div>
         </div>
         
         <div id="kenzouTitle">建造</div>
         <div id="kenzouCounter">
             <div>
+                <p>
+                    <Counter />
+                </p>
+
                 <p>
                     <Counter />
                 </p>
