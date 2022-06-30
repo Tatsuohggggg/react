@@ -99,6 +99,8 @@ export function Counter() {
         }
     }
 
+    const nextTiming = () => 1000 - Date.now() % 1000;
+
     // ボタンを押下した際にタイマーを動かしたり止めたりする
     const operateTimer = () => {
         if (buttonText == "スタート") {
@@ -108,7 +110,7 @@ export function Counter() {
             const intervalId = setInterval(() => { callbackRef.current() }, 1000);
             setId(intervalId);
         } else {
-            clearInterval(id);
+            clearTimeout(id);
         }
     }
 
