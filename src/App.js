@@ -3,9 +3,9 @@
 
 const App = () => {
     return <>
-    <div id="sidebar">
-        <p>サイドバー</p>
-    </div>
+        <div id="sidebar">
+            <p>サイドバー</p>
+        </div>
         <div id="content">
             <div id="enseiTitle">遠征</div>
             <div id="enseiCounter">
@@ -70,7 +70,6 @@ const App = () => {
 }
 
 export function Counter() {
-
     const [hour, setHour] = useState(0);
     const [minute, setMinute] = useState(0);
     const [second, setSecond] = useState(0);
@@ -81,8 +80,16 @@ export function Counter() {
     const [buttonText, setButtonText] = useState("スタート"); //same as creating your state variable where "Next" is the default value for buttonText and setButtonText is the setter function for your state variable instead of setState
     const [pushCount, setpushCount] = useState(1);
     const [timerOpen, settimerOpen] = useState(false);
+    const [startTimeValue, setStartTimeValue] = useState(0);
+    const [nowTimeValue, setNowTimeValue] = useState(0);
+    const [countDownValue, setCountDownValue] = useState(0);
 
-    const dropdownRef = useRef();
+    /*     const getNow = () => {
+            const intervalId2 = setInterval(() => {
+                setNowTimeValue(t => new Date().getHours() * 3600 + new Date().getMinutes() * 60 + new Date().getSeconds()
+                )
+            }, 1000);
+        } */
 
     // ボタンを押下した際に表示されている文字を変更する
     const changeText = () => {
@@ -100,7 +107,10 @@ export function Counter() {
     // ボタンを押下した際にタイマーを動かしたり止めたりする
     const operateTimer = () => {
         if (buttonText == "スタート") {
-            const intervalId = setTimeout(countDown(intervalId),nextTiming);
+            setStartTimeValue(t => new Date().getHours() * 3600 + new Date().getMinutes() * 60 + new Date().getSeconds());
+            setNowTimeValue(t => new Date().getHours() * 3600 + new Date().getMinutes() * 60 + new Date().getSeconds());
+            setCountDownValue(t => (hour * 3600) + (minute * 60) + second);
+            const intervalId = setInterval(() => { callbackRef.current() }, 1000);
             setId(intervalId);
         } else {
             clearTimeout(id);
@@ -108,35 +118,24 @@ export function Counter() {
     }
 
     // カウントダウン用
-    const countDown = (id) => {
-        console.log(countMax);
-        console.log("呼ばれた回数");
-        setCount(c => c + 1);
-        if (countMax == 0) {
-            setCountMax(c => hour * 3600 + minute * 60 + second);
-        }
-        // secが0でないときの処理
-        if (second != 0) {
-            setSecond(s => s - 1);
-        }
-        // secが0でminが0でないときの処理
-        else if (minute != 0) {
-            setMinute(m => m - 1);
-            setSecond(s => 59);
-        }
-        // secが0でminが0でhourが0でないときの処理
-        else if (hour != 0) {
-            setHour(h => h - 1);
-            setMinute(m => 59);
-            setSecond(s => 59);
-            // カウントダウンが終了したときの処理
-        } else {
+    const countDown = () => {
+        if (hour == 0 && minute == 0 && second == 0) {
             clearInterval(id);
             setId(null);
             setButtonText("スタート");
             settimerOpen(!timerOpen);
+        } else {
+            setNowTimeValue(d => new Date().getHours() * 3600 + new Date().getMinutes() * 60 + new Date().getSeconds());
+            console.log(startTimeValue);
+            console.log(nowTimeValue);
+            const diff = nowTimeValue - startTimeValue;
+            const fixCountDownValue = countDownValue - (diff + 1);
+            console.log(countDownValue);
+            console.log(fixCountDownValue);
+            setHour(h => Math.floor(fixCountDownValue / 3600));
+            setMinute(m => Math.floor((fixCountDownValue % 3600) / 60));
+            setSecond(s => ((fixCountDownValue % 3600) % 60));
         }
-        const intervalId = setTimeout(countDown(), nextTiming);
     }
 
     // 描画されるとカウントダウン関数を実行する
@@ -189,6 +188,9 @@ export function EnseiCounter() {
     const [seihouOpen, setSeihouOpen] = useState(false);
     const [nanpouOpen, setNanpouOpen] = useState(false);
     const [tyubuOpen, setTyubuOpen] = useState(false);
+    const [startTimeValue, setStartTimeValue] = useState(0);
+    const [nowTimeValue, setNowTimeValue] = useState(0);
+    const [countDownValue, setCountDownValue] = useState(0);
     const dropdownRef = useRef();
 
     // リストの外側をクリックしたらリストが閉じる関数
@@ -457,6 +459,9 @@ export function EnseiCounter() {
     // ボタンを押下した際にタイマーを動かしたり止めたりする
     const operateTimer = () => {
         if (buttonText == "スタート") {
+            setStartTimeValue(t => new Date().getHours() * 3600 + new Date().getMinutes() * 60 + new Date().getSeconds());
+            setNowTimeValue(t => (new Date().getHours() * 3600 + new Date().getMinutes() * 60 + new Date().getSeconds()));
+            setCountDownValue(t => hour * 3600 + minute * 60 + second);
             const intervalId = setInterval(() => { callbackRef.current() }, 1000);
             setId(intervalId);
         } else {
@@ -466,38 +471,18 @@ export function EnseiCounter() {
 
     // カウントダウン用
     const countDown = () => {
-        console.log(countMax);
-        console.log("呼ばれた回数");
-        setCount(c => c + 1);
-        if (countMax == 0) {
-            setCountMax(c => hour * 3600 + minute * 60 + second);
-        }
-        // secが0でないときの処理
-        if (second != 0) {
-            setSecond(s => s - 1);
-        }
-        // secが0でminが0でないときの処理
-        else if (minute != 0) {
-            setMinute(m => m - 1);
-            setSecond(s => 59);
-        }
-        // secが0でminが0でhourが0でないときの処理
-        else if (hour != 0) {
-            setHour(h => h - 1);
-            setMinute(m => 59);
-            setSecond(s => 59);
-            // カウントダウンが終了したときの処理
-        } else {
-            clearInterval(id);
-            setId(null);
-            setButtonText("スタート");
-            settimerOpen(!timerOpen);
-        }
+        setNowTimeValue(t => (new Date().getHours() * 3600 + new Date().getMinutes() * 60 + new Date().getSeconds()));
+        console.log(startTimeValue);
+        console.log(nowTimeValue);
+        const diff = nowTimeValue - startTimeValue;
+        console.log(diff);
+        const fixCountDownValue = countDownValue - (diff + 1);
+        console.log(fixCountDownValue);
+        setHour(h => Math.floor(fixCountDownValue / 3600));
+        setMinute(m => Math.floor((fixCountDownValue % 3600) / 60));
+        setSecond(s => ((fixCountDownValue % 3600) % 60));
     }
 
-    const timer = () => {
-
-    }
 
     // 描画されるとカウントダウン関数を実行する
     useEffect(() => {
