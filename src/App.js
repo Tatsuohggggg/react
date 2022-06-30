@@ -73,12 +73,9 @@ export function Counter() {
     const [hour, setHour] = useState(0);
     const [minute, setMinute] = useState(0);
     const [second, setSecond] = useState(0);
-    const [countMax, setCountMax] = useState(0);
-    const [count, setCount] = useState(0);
     const [id, setId] = useState(null);
     const callbackRef = useRef();
     const [buttonText, setButtonText] = useState("スタート"); //same as creating your state variable where "Next" is the default value for buttonText and setButtonText is the setter function for your state variable instead of setState
-    const [pushCount, setpushCount] = useState(1);
     const [timerOpen, settimerOpen] = useState(false);
     const [startTimeValue, setStartTimeValue] = useState(0);
     const [nowTimeValue, setNowTimeValue] = useState(0);
@@ -106,8 +103,8 @@ export function Counter() {
     const operateTimer = () => {
         if (buttonText == "スタート") {
             setStartTimeValue(t => new Date().getHours() * 3600 + new Date().getMinutes() * 60 + new Date().getSeconds());
-            setNowTimeValue(t => new Date().getHours() * 3600 + new Date().getMinutes() * 60 + new Date().getSeconds());
-            setCountDownValue(t => (hour * 3600) + (minute * 60) + second);
+            setNowTimeValue(t => (new Date().getHours() * 3600 + new Date().getMinutes() * 60 + new Date().getSeconds()));
+            setCountDownValue(t => hour * 3600 + minute * 60 + Number(second));
             const intervalId = setInterval(() => { callbackRef.current() }, 1000);
             setId(intervalId);
         } else {
@@ -117,23 +114,12 @@ export function Counter() {
 
     // カウントダウン用
     const countDown = () => {
-        if (hour == 0 && minute == 0 && second == 0) {
-            clearInterval(id);
-            setId(null);
-            setButtonText("スタート");
-            settimerOpen(!timerOpen);
-        } else {
-            setNowTimeValue(d => new Date().getHours() * 3600 + new Date().getMinutes() * 60 + new Date().getSeconds());
-            console.log(startTimeValue);
-            console.log(nowTimeValue);
-            const diff = nowTimeValue - startTimeValue;
-            const fixCountDownValue = countDownValue - (diff + 1);
-            console.log(countDownValue);
-            console.log(fixCountDownValue);
-            setHour(h => Math.floor(fixCountDownValue / 3600));
-            setMinute(m => Math.floor((fixCountDownValue % 3600) / 60));
-            setSecond(s => ((fixCountDownValue % 3600) % 60));
-        }
+        setNowTimeValue(t => (new Date().getHours() * 3600 + new Date().getMinutes() * 60 + new Date().getSeconds()));
+        const diff = nowTimeValue - startTimeValue;
+        const fixCountDownValue = countDownValue - (diff + 1);
+        setHour(h => Math.floor(fixCountDownValue / 3600));
+        setMinute(m => Math.floor((fixCountDownValue % 3600) / 60));
+        setSecond(s => ((fixCountDownValue % 3600) % 60));
     }
 
     // 描画されるとカウントダウン関数を実行する
@@ -459,7 +445,7 @@ export function EnseiCounter() {
         if (buttonText == "スタート") {
             setStartTimeValue(t => new Date().getHours() * 3600 + new Date().getMinutes() * 60 + new Date().getSeconds());
             setNowTimeValue(t => (new Date().getHours() * 3600 + new Date().getMinutes() * 60 + new Date().getSeconds()));
-            setCountDownValue(t => hour * 3600 + minute * 60 + second);
+            setCountDownValue(t => hour * 3600 + minute * 60 + Number(second));
             const intervalId = setInterval(() => { callbackRef.current() }, 1000);
             setId(intervalId);
         } else {
