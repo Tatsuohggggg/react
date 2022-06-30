@@ -3,62 +3,67 @@
 
 const App = () => {
     return <>
-        <div id="enseiTitle">遠征</div>
-        <div id="enseiCounter">
-            <div>
-                <p>
-                    <EnseiCounter />
-                </p>
+    <div id="sidebar">
+        <p>サイドバー</p>
+    </div>
+        <div id="content">
+            <div id="enseiTitle">遠征</div>
+            <div id="enseiCounter">
+                <div>
+                    <p>
+                        <EnseiCounter />
+                    </p>
 
-                <p>
-                    <EnseiCounter />
-                </p>
+                    <p>
+                        <EnseiCounter />
+                    </p>
 
-                <p>
-                    <EnseiCounter />
-                </p>
+                    <p>
+                        <EnseiCounter />
+                    </p>
+                </div>
             </div>
-        </div>
 
-        <div id="nyukyoTitle">入渠</div>
-        <div id="nyukyoCounter">
-            <div>
-                <p>
-                    <Counter />
-                </p>
+            <div id="nyukyoTitle">入渠</div>
+            <div id="nyukyoCounter">
+                <div>
+                    <p>
+                        <Counter />
+                    </p>
 
-                <p>
-                    <Counter />
-                </p>
+                    <p>
+                        <Counter />
+                    </p>
 
-                <p>
-                    <Counter />
-                </p>
+                    <p>
+                        <Counter />
+                    </p>
 
-                <p>
-                    <Counter />
-                </p>
+                    <p>
+                        <Counter />
+                    </p>
+                </div>
             </div>
-        </div>
-        
-        <div id="kenzouTitle">建造</div>
-        <div id="kenzouCounter">
-            <div>
-                <p>
-                    <Counter />
-                </p>
 
-                <p>
-                    <Counter />
-                </p>
+            <div id="kenzouTitle">建造</div>
+            <div id="kenzouCounter">
+                <div>
+                    <p>
+                        <Counter />
+                    </p>
 
-                <p>
-                    <Counter />
-                </p>
+                    <p>
+                        <Counter />
+                    </p>
 
-                <p>
-                    <Counter />
-                </p>
+                    <p>
+                        <Counter />
+                    </p>
+
+                    <p>
+                        <Counter />
+                    </p>
+                </div>
             </div>
         </div>
     </>
