@@ -16,6 +16,21 @@ code {
   font-size: 30px;
 }
 
+#sidebar {
+  background-color: #ff838b;
+  width:100px;
+  height:300px;
+  text-align: center;
+}
+
+#content {
+  background-color: #b3d874;
+  width:250px;
+  height:300px;
+  text-align: center;
+  margin-left: 10px;
+}
+
 #timer {
   font-size: 30px;
 }
