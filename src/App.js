@@ -116,12 +116,22 @@ export function Counter() {
 
     // カウントダウン用
     const countDown = () => {
-        setNowTimeValue(t => (new Date().getHours() * 3600 + new Date().getMinutes() * 60 + new Date().getSeconds()));
-        const diff = nowTimeValue - startTimeValue;
-        const fixCountDownValue = countDownValue - (diff + 1);
-        setHour(h => Math.floor(fixCountDownValue / 3600));
-        setMinute(m => Math.floor((fixCountDownValue % 3600) / 60));
-        setSecond(s => ((fixCountDownValue % 3600) % 60));
+        if (hour <= 0 && minute <= 0 && second <= 0) {
+            clearInterval(id);
+            settimerOpen(!timerOpen);
+            setButtonText("スタート");
+            setHour(h => 0);
+            setMinute(m => 0);
+            setSecond(s => 0);
+        } else {
+            setNowTimeValue(t => (new Date().getHours() * 3600 + new Date().getMinutes() * 60 + new Date().getSeconds()));
+            const diff = nowTimeValue - startTimeValue;
+            const fixCountDownValue = countDownValue - (diff + 1);
+            setHour(h => Math.floor(fixCountDownValue / 3600));
+            setMinute(m => Math.floor((fixCountDownValue % 3600) / 60));
+            setSecond(s => ((fixCountDownValue % 3600) % 60));
+        }
+
     }
 
     // 描画されるとカウントダウン関数を実行する
@@ -457,16 +467,22 @@ export function EnseiCounter() {
 
     // カウントダウン用
     const countDown = () => {
-        setNowTimeValue(t => (new Date().getHours() * 3600 + new Date().getMinutes() * 60 + new Date().getSeconds()));
-        console.log(startTimeValue);
-        console.log(nowTimeValue);
-        const diff = nowTimeValue - startTimeValue;
-        console.log(diff);
-        const fixCountDownValue = countDownValue - (diff + 1);
-        console.log(fixCountDownValue);
-        setHour(h => Math.floor(fixCountDownValue / 3600));
-        setMinute(m => Math.floor((fixCountDownValue % 3600) / 60));
-        setSecond(s => ((fixCountDownValue % 3600) % 60));
+        if (hour <= 0 && minute <= 0 && second <= 0) {
+            clearInterval(id);
+            settimerOpen(!timerOpen);
+            setButtonText("スタート");
+            setHour(h => 0);
+            setMinute(m => 0);
+            setSecond(s => 0);
+        } else {
+            setNowTimeValue(t => (new Date().getHours() * 3600 + new Date().getMinutes() * 60 + new Date().getSeconds()));
+            const diff = nowTimeValue - startTimeValue;
+            const fixCountDownValue = countDownValue - (diff + 1);
+            setHour(h => Math.floor(fixCountDownValue / 3600));
+            setMinute(m => Math.floor((fixCountDownValue % 3600) / 60));
+            setSecond(s => ((fixCountDownValue % 3600) % 60));
+        }
+
     }
 
 
