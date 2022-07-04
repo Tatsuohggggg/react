@@ -1,4 +1,6 @@
 ﻿import React, { useEffect, useState, useRef } from 'react';
+import useSound from 'use-sound';
+import Sound from './決定ボタンを押す26.mp3';
 
 
 const App = () => {
@@ -80,6 +82,7 @@ export function Counter() {
     const [startTimeValue, setStartTimeValue] = useState(0);
     const [nowTimeValue, setNowTimeValue] = useState(0);
     const [countDownValue, setCountDownValue] = useState(0);
+    const [play] = useSound(Sound);
 
     /*     const getNow = () => {
             const intervalId2 = setInterval(() => {
@@ -110,7 +113,7 @@ export function Counter() {
             const intervalId = setInterval(() => { callbackRef.current() }, 1000);
             setId(intervalId);
         } else {
-            clearTimeout(id);
+            clearInterval(id);
         }
     }
 
@@ -130,6 +133,9 @@ export function Counter() {
             setHour(h => Math.floor(fixCountDownValue / 3600));
             setMinute(m => Math.floor((fixCountDownValue % 3600) / 60));
             setSecond(s => ((fixCountDownValue % 3600) % 60));
+            if(hour == 0 && minute == 1 && second == 1){
+                play();
+            }
         }
 
     }
@@ -188,6 +194,7 @@ export function EnseiCounter() {
     const [nowTimeValue, setNowTimeValue] = useState(0);
     const [countDownValue, setCountDownValue] = useState(0);
     const dropdownRef = useRef();
+    const [play] = useSound(Sound);
 
     // リストの外側をクリックしたらリストが閉じる関数
     useEffect(() => {
@@ -481,6 +488,9 @@ export function EnseiCounter() {
             setHour(h => Math.floor(fixCountDownValue / 3600));
             setMinute(m => Math.floor((fixCountDownValue % 3600) / 60));
             setSecond(s => ((fixCountDownValue % 3600) % 60));
+            if(hour == 0 && minute == 1 && second == 1){
+                play();
+            }
         }
 
     }
