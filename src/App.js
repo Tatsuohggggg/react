@@ -1,6 +1,6 @@
 ﻿import React, { useEffect, useState, useRef } from 'react';
 import useSound from 'use-sound';
-import Sound from './決定ボタンを押す26.mp3';
+import Sound from './決定ボタンを押す4.mp3';
 
 
 const App = () => {
