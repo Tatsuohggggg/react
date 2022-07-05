@@ -16,7 +16,7 @@
 .Header{
   font-size: 40px;
   height: 60px;
-
+  padding-left: 20px;
   background-color: #497997;
   box-sizing:border-box;
 }
