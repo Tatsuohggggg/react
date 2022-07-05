@@ -341,20 +341,20 @@ export function EnseiCounter() {
                             {chinjufuOpen && (
                                 <div className="enseiListDiv">
                                     <ul className="enseiList">
-                                        <li><p id="ensei1" onClick={() => onClicklistElem(0)}>練習航海</p></li>
-                                        <li><p id="ensei2" onClick={() => onClicklistElem(1)}>長距離練習航海</p></li>
-                                        <li><p id="ensei3" onClick={() => onClicklistElem(2)}>警備任務</p></li>
-                                        <li><p id="ensei4" onClick={() => onClicklistElem(3)}>対潜警戒任務</p></li>
-                                        <li><p id="ensei5" onClick={() => onClicklistElem(4)}>海上護衛任務</p></li>
-                                        <li><p id="ensei6" onClick={() => onClicklistElem(5)}>防空射撃任務</p></li>
-                                        <li><p id="ensei7" onClick={() => onClicklistElem(6)}>観艦式予行</p></li>
-                                        <li><p id="ensei8" onClick={() => onClicklistElem(7)}>観艦式</p></li>
-                                        <li><p id="enseia1" onClick={() => onClicklistElem(8)}>兵站強化任務</p></li>
-                                        <li><p id="enseia2" onClick={() => onClicklistElem(9)}>海峡警備行動</p></li>
-                                        <li><p id="enseia3" onClick={() => onClicklistElem(10)}>長時間対潜警戒</p></li>
-                                        <li><p id="enseia4" onClick={() => onClicklistElem(11)}>南西方面連絡線哨戒</p></li>
-                                        <li><p id="enseia5" onClick={() => onClicklistElem(12)}>小笠原沖哨戒線</p></li>
-                                        <li><p id="enseia6" onClick={() => onClicklistElem(13)}>小笠原沖戦闘哨戒</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(0)}>練習航海</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(1)}>長距離練習航海</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(2)}>警備任務</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(3)}>対潜警戒任務</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(4)}>海上護衛任務</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(5)}>防空射撃任務</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(6)}>観艦式予行</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(7)}>観艦式</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(8)}>兵站強化任務</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(9)}>海峡警備行動</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(10)}>長時間対潜警戒</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(11)}>南西方面連絡線哨戒</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(12)}>小笠原沖哨戒線</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(13)}>小笠原沖戦闘哨戒</p></li>
                                     </ul>
                                 </div>
                             )}
@@ -364,20 +364,20 @@ export function EnseiCounter() {
                             {nanseisyotouOpen && (
                                 <div className="enseiListDiv">
                                     <ul className="enseiList">
-                                        <li><p id="ensei9" onClick={() => onClicklistElem(14)}>タンカー護衛任務</p></li>
-                                        <li><p id="ensei10" onClick={() => onClicklistElem(15)}>強行偵察任務</p></li>
-                                        <li><p id="ensei11" onClick={() => onClicklistElem(16)}>ボーキサイト輸送任務</p></li>
-                                        <li><p id="ensei12" onClick={() => onClicklistElem(17)}>資源輸送任務</p></li>
-                                        <li><p id="ensei13" onClick={() => onClicklistElem(18)}>鼠輸送作戦</p></li>
-                                        <li><p id="ensei14" onClick={() => onClicklistElem(19)}>包囲陸戦隊撤収作戦</p></li>
-                                        <li><p id="ensei15" onClick={() => onClicklistElem(20)}>囮機動部隊支援作戦</p></li>
-                                        <li><p id="ensei16" onClick={() => onClicklistElem(21)}>艦隊決戦援護作戦</p></li>
-                                        <li><p id="enseib1" onClick={() => onClicklistElem(22)}>南西方面航空偵察作戦</p></li>
-                                        <li><p id="enseib2" onClick={() => onClicklistElem(23)}>敵泊地強襲反撃作戦</p></li>
-                                        <li><p id="enseib3" onClick={() => onClicklistElem(24)}>南西諸島離島哨戒作戦</p></li>
-                                        <li><p id="enseib4" onClick={() => onClicklistElem(25)}>南西諸島離島防衛作戦</p></li>
-                                        <li><p id="enseib5" onClick={() => onClicklistElem(26)}>南西諸島捜索撃滅戦</p></li>
-                                        <li><p id="enseib6" onClick={() => onClicklistElem(27)}>精鋭水雷戦隊夜襲</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(14)}>タンカー護衛任務</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(15)}>強行偵察任務</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(16)}>ボーキサイト輸送任務</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(17)}>資源輸送任務</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(18)}>鼠輸送作戦</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(19)}>包囲陸戦隊撤収作戦</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(20)}>囮機動部隊支援作戦</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(21)}>艦隊決戦援護作戦</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(22)}>南西方面航空偵察作戦</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(23)}>敵泊地強襲反撃作戦</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(24)}>南西諸島離島哨戒作戦</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(25)}>南西諸島離島防衛作戦</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(26)}>南西諸島捜索撃滅戦</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(27)}>精鋭水雷戦隊夜襲</p></li>
                                     </ul>
                                 </div>
                             )}
@@ -386,14 +386,14 @@ export function EnseiCounter() {
                             {hoppouOpen && (
                                 <div className="enseiListDiv">
                                     <ul className="enseiList">
-                                        <li><p id="ensei17" onClick={() => onClicklistElem(28)}>敵地偵察作戦</p></li>
-                                        <li><p id="ensei18" onClick={() => onClicklistElem(29)}>航空機輸送作戦</p></li>
-                                        <li><p id="ensei19" onClick={() => onClicklistElem(30)}>北号作戦</p></li>
-                                        <li><p id="ensei20" onClick={() => onClicklistElem(31)}>潜水艦哨戒任務</p></li>
-                                        <li><p id="ensei21" onClick={() => onClicklistElem(32)}>北方鼠輸送作戦</p></li>
-                                        <li><p id="ensei22" onClick={() => onClicklistElem(33)}>艦隊演習</p></li>
-                                        <li><p id="ensei23" onClick={() => onClicklistElem(34)}>航空戦艦運用演習</p></li>
-                                        <li><p id="ensei24" onClick={() => onClicklistElem(35)}>北方航路海上護衛</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(28)}>敵地偵察作戦</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(29)}>航空機輸送作戦</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(30)}>北号作戦</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(31)}>潜水艦哨戒任務</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(32)}>北方鼠輸送作戦</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(33)}>艦隊演習</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(34)}>航空戦艦運用演習</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(35)}>北方航路海上護衛</p></li>
                                     </ul>
                                 </div>
                             )}
@@ -402,12 +402,12 @@ export function EnseiCounter() {
                             {nanseiOpen && (
                                 <div className="enseiListDiv">
                                     <ul className="enseiList">
-                                        <li><p id="ensei41" onClick={() => onClicklistElem(36)}>ブルネイ泊地沖哨戒</p></li>
-                                        <li><p id="ensei42" onClick={() => onClicklistElem(37)}>ミ船団護衛{'('}一号船団{')'}</p></li>
-                                        <li><p id="ensei43" onClick={() => onClicklistElem(38)}>ミ船団護衛{'('}二号船団{')'}</p></li>
-                                        <li><p id="ensei44" onClick={() => onClicklistElem(39)}>航空装備輸送任務</p></li>
-                                        <li><p id="ensei45" onClick={() => onClicklistElem(40)}>ボーキサイト船団護衛</p></li>
-                                        <li><p id="ensei46" onClick={() => onClicklistElem(41)}>南西海域戦闘哨戒</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(36)}>ブルネイ泊地沖哨戒</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(37)}>ミ船団護衛{'('}一号船団{')'}</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(38)}>ミ船団護衛{'('}二号船団{')'}</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(39)}>航空装備輸送任務</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(40)}>ボーキサイト船団護衛</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(41)}>南西海域戦闘哨戒</p></li>
                                     </ul>
                                 </div>
                             )}
@@ -416,17 +416,17 @@ export function EnseiCounter() {
                             {seihouOpen && (
                                 <div className="enseiListDiv">
                                     <ul className="enseiList">
-                                        <li><p id="ensei25" onClick={() => onClicklistElem(42)}>通商破壊作戦</p></li>
-                                        <li><p id="ensei26" onClick={() => onClicklistElem(43)}>敵母港空襲作戦</p></li>
-                                        <li><p id="ensei27" onClick={() => onClicklistElem(44)}>潜水艦通商破壊作戦</p></li>
-                                        <li><p id="ensei28" onClick={() => onClicklistElem(45)}>西方海域封鎖作戦</p></li>
-                                        <li><p id="ensei29" onClick={() => onClicklistElem(46)}>潜水艦派遣演習</p></li>
-                                        <li><p id="ensei30" onClick={() => onClicklistElem(47)}>潜水艦派遣作戦</p></li>
-                                        <li><p id="ensei31" onClick={() => onClicklistElem(48)}>海外艦との接触</p></li>
-                                        <li><p id="ensei32" onClick={() => onClicklistElem(49)}>遠洋練習航海</p></li>
-                                        <li><p id="enseid1" onClick={() => onClicklistElem(50)}>西方海域偵察作戦</p></li>
-                                        <li><p id="enseid2" onClick={() => onClicklistElem(51)}>西方潜水艦作戦</p></li>
-                                        <li><p id="enseid3" onClick={() => onClicklistElem(52)}>欧州方面友軍との接触</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(42)}>通商破壊作戦</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(43)}>敵母港空襲作戦</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(44)}>潜水艦通商破壊作戦</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(45)}>西方海域封鎖作戦</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(46)}>潜水艦派遣演習</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(47)}>潜水艦派遣作戦</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(48)}>海外艦との接触</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(49)}>遠洋練習航海</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(50)}>西方海域偵察作戦</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(51)}>西方潜水艦作戦</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(52)}>欧州方面友軍との接触</p></li>
                                     </ul>
                                 </div>
                             )}
@@ -436,14 +436,14 @@ export function EnseiCounter() {
                                 <div className="enseiListDiv">
                                     <ul className="enseiList">
                                         {/* 33,34は支援任務の為欠番 */}
-                                        <li><p id="ensei35" onClick={() => onClicklistElem(53)}>MO作戦</p></li>
-                                        <li><p id="ensei36" onClick={() => onClicklistElem(54)}>水上機基地建設</p></li>
-                                        <li><p id="ensei37" onClick={() => onClicklistElem(55)}>東京急行</p></li>
-                                        <li><p id="ensei38" onClick={() => onClicklistElem(56)}>東京急行{"("}弐{")"}</p></li>
-                                        <li><p id="ensei39" onClick={() => onClicklistElem(57)}>遠洋潜水艦作戦</p></li>
-                                        <li><p id="ensei40" onClick={() => onClicklistElem(58)}>水上機前線輸送</p></li>
-                                        <li><p id="enseie1" onClick={() => onClicklistElem(59)}>ラバウル方面艦隊進出</p></li>
-                                        <li><p id="enseie2" onClick={() => onClicklistElem(60)}>強行鼠作戦</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(53)}>MO作戦</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(54)}>水上機基地建設</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(55)}>東京急行</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(56)}>東京急行{"("}弐{")"}</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(57)}>遠洋潜水艦作戦</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(58)}>水上機前線輸送</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(59)}>ラバウル方面艦隊進出</p></li>
+                                        <li><p className="ensei" onClick={() => onClicklistElem(60)}>強行鼠作戦</p></li>
                                     </ul>
                                 </div>
                             )}
