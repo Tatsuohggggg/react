@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/react/static/css/main.a5745d5b.css",
-    "main.js": "/react/static/js/main.d1a48c8e.js",
+    "main.css": "/react/static/css/main.509f7a6e.css",
+    "main.js": "/react/static/js/main.f9493b63.js",
     "static/js/845.f13a7a98.chunk.js": "/react/static/js/845.f13a7a98.chunk.js",
     "static/js/787.16e3aca2.chunk.js": "/react/static/js/787.16e3aca2.chunk.js",
     "static/media/決定ボタンを押す4.mp3": "/react/static/media/決定ボタンを押す4.fabc44b613282b92bc06.mp3",
     "index.html": "/react/index.html",
-    "main.a5745d5b.css.map": "/react/static/css/main.a5745d5b.css.map",
-    "main.d1a48c8e.js.map": "/react/static/js/main.d1a48c8e.js.map",
+    "main.509f7a6e.css.map": "/react/static/css/main.509f7a6e.css.map",
+    "main.f9493b63.js.map": "/react/static/js/main.f9493b63.js.map",
     "845.f13a7a98.chunk.js.map": "/react/static/js/845.f13a7a98.chunk.js.map",
     "787.16e3aca2.chunk.js.map": "/react/static/js/787.16e3aca2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a5745d5b.css",
-    "static/js/main.d1a48c8e.js"
+    "static/css/main.509f7a6e.css",
+    "static/js/main.f9493b63.js"
   ]
 }
