@@ -37,19 +37,19 @@ const App = () => {
                         <div id="nyukyoCounter">
                             <div>
                                 <p className='Counter' id='firstnyukyoCounter'>
-                                    <Counter />
+                                <EnseiCounter />
                                 </p>
 
                                 <p className='Counter' id='secondnyukyoCounter'>
-                                    <Counter />
+                                <EnseiCounter />
                                 </p>
 
                                 <p className='Counter' id='thirdnyukyoCounter'>
-                                    <Counter />
+                                <EnseiCounter />
                                 </p>
 
                                 <p className='Counter' id='fourthnyukyoCounter'>
-                                    <Counter />
+                                <EnseiCounter />
                                 </p>
                             </div>
                         </div>
@@ -58,19 +58,19 @@ const App = () => {
                         <div id="kenzouCounter">
                             <div>
                                 <p className='Counter' id='firstkenzouCounter'>
-                                    <Counter />
+                                <EnseiCounter />
                                 </p>
 
                                 <p className='Counter' id='secondkenzouCounter'>
-                                    <Counter />
+                                <EnseiCounter />
                                 </p>
 
                                 <p className='Counter' id='thirdkenzouCounter'>
-                                    <Counter />
+                                <EnseiCounter />
                                 </p>
 
                                 <p className='Counter' id='fourthkenzouCounter'>
-                                    <Counter />
+                                <EnseiCounter />
                                 </p>
                             </div>
                         </div>
@@ -81,7 +81,7 @@ const App = () => {
     </>
 }
 
-export function Counter() {
+/* export function Counter() {
     const [hour, setHour] = useState(0);
     const [minute, setMinute] = useState(0);
     const [second, setSecond] = useState(0);
@@ -113,8 +113,6 @@ export function Counter() {
     const finishAnnounce = () => {
         setFinishText(true);
     }
-
-    const nextTiming = () => 1000 - Date.now() % 1000;
 
     // ボタンを押下した際にタイマーを動かしたり止めたりする
     const operateTimer = () => {
@@ -158,7 +156,7 @@ export function Counter() {
     }, [countDown])
 
     return (
-        <div>
+        <div className="timerapp">
             {finishText && (
                 <div>
                     <p id="finishText">終了！</p>
@@ -180,15 +178,16 @@ export function Counter() {
 
                 {timerOpen && (
                     <div>
-                        <p id="timer">{hour}時間{minute}分{second}秒</p>
+                        <p className="timer">{hour}時間{minute}分{second}秒</p>
                     </div>
                 )
                 }
             </div>
             <button id="btn" type="button" onClick={() => { changeText(); operateTimer(); }}>{buttonText}</button>
+            <button className="risetbtn" type="button" onClick={() => { setHour(0); setMinute(0); setSecond(0)}}>リセット</button>
         </div>
     )
-}
+} */
 
 
 
@@ -222,7 +221,12 @@ export function EnseiCounter() {
     const dropdownRef = useRef();
     const [finishText, setFinishText] = useState(false);
     const [enseiPlace, setEnseiPlace] = useState("");
+    const [Type, setType] = useState("");
     const [play] = useSound(Sound);
+
+    const confirmType = () => {
+        const parentId = document.querySelector('')
+    }
 
     // リストの外側をクリックしたらリストが閉じる関数
     useEffect(() => {
@@ -337,113 +341,116 @@ export function EnseiCounter() {
                 {isOpen && (
                     <div>
                         <ul className="enseiArea">
+                            {/* 鎮守府近海 */}
                             <li className="enseiAreaElem"><p onClick={() => setChinjufuOpen(!chinjufuOpen)}>☆鎮守府近海</p></li>
                             {chinjufuOpen && (
                                 <div className="enseiListDiv">
                                     <ul className="enseiList">
-                                        <li><p className="ensei" onClick={() => onClicklistElem(0)}>練習航海</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(1)}>長距離練習航海</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(2)}>警備任務</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(3)}>対潜警戒任務</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(4)}>海上護衛任務</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(5)}>防空射撃任務</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(6)}>観艦式予行</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(7)}>観艦式</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(8)}>兵站強化任務</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(9)}>海峡警備行動</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(10)}>長時間対潜警戒</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(11)}>南西方面連絡線哨戒</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(12)}>小笠原沖哨戒線</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(13)}>小笠原沖戦闘哨戒</p></li>
+                                        {Enseiproperties.map((value, key) => {
+                                            if (key <= 13) {
+                                                return (
+                                                    <li key={key}
+                                                        className="ensei" onClick={
+                                                            () => onClicklistElem(key)
+                                                        }>{value.place}</li>
+                                                )
+                                            }
+                                        })}
                                     </ul>
                                 </div>
                             )}
 
-
+                            {/* 南西諸島海域 */}
                             <li className="enseiAreaElem"><p onClick={() => setNanseisyotouOpen(!nanseisyotouOpen)}>☆南西諸島海域</p></li>
                             {nanseisyotouOpen && (
                                 <div className="enseiListDiv">
                                     <ul className="enseiList">
-                                        <li><p className="ensei" onClick={() => onClicklistElem(14)}>タンカー護衛任務</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(15)}>強行偵察任務</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(16)}>ボーキサイト輸送任務</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(17)}>資源輸送任務</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(18)}>鼠輸送作戦</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(19)}>包囲陸戦隊撤収作戦</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(20)}>囮機動部隊支援作戦</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(21)}>艦隊決戦援護作戦</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(22)}>南西方面航空偵察作戦</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(23)}>敵泊地強襲反撃作戦</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(24)}>南西諸島離島哨戒作戦</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(25)}>南西諸島離島防衛作戦</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(26)}>南西諸島捜索撃滅戦</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(27)}>精鋭水雷戦隊夜襲</p></li>
+                                        {Enseiproperties.map((value, key) => {
+                                            if (14 <= key && key <= 27) {
+                                                return (
+                                                    <li key={key}
+                                                        className="ensei" onClick={
+                                                            () => onClicklistElem(key)
+                                                        }>{value.place}</li>
+                                                )
+                                            }
+                                        })}
                                     </ul>
                                 </div>
                             )}
 
+                            {/* 北方海域 */}
                             <li className="enseiAreaElem"><p onClick={() => setHoppouOpen(!hoppouOpen)}>☆北方海域</p></li>
                             {hoppouOpen && (
                                 <div className="enseiListDiv">
                                     <ul className="enseiList">
-                                        <li><p className="ensei" onClick={() => onClicklistElem(28)}>敵地偵察作戦</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(29)}>航空機輸送作戦</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(30)}>北号作戦</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(31)}>潜水艦哨戒任務</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(32)}>北方鼠輸送作戦</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(33)}>艦隊演習</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(34)}>航空戦艦運用演習</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(35)}>北方航路海上護衛</p></li>
+                                        {Enseiproperties.map((value, key) => {
+                                            if (28 <= key && key <= 35) {
+                                                return (
+                                                    <li key={key}
+                                                        className="ensei" onClick={
+                                                            () => onClicklistElem(key)
+                                                        }>{value.place}</li>
+                                                )
+                                            }
+                                        })}
                                     </ul>
                                 </div>
                             )}
 
+                            {/* 南西海域 */}
                             <li className="enseiAreaElem"><p onClick={() => setNanseiOpen(!nanseiOpen)}>☆南西海域</p></li>
                             {nanseiOpen && (
                                 <div className="enseiListDiv">
                                     <ul className="enseiList">
-                                        <li><p className="ensei" onClick={() => onClicklistElem(36)}>ブルネイ泊地沖哨戒</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(37)}>ミ船団護衛{'('}一号船団{')'}</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(38)}>ミ船団護衛{'('}二号船団{')'}</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(39)}>航空装備輸送任務</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(40)}>ボーキサイト船団護衛</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(41)}>南西海域戦闘哨戒</p></li>
+                                        {Enseiproperties.map((value, key) => {
+                                            if (36 <= key && key <= 41) {
+                                                return (
+                                                    <li key={key}
+                                                        className="ensei" onClick={
+                                                            () => onClicklistElem(key)
+                                                        }>{value.place}</li>
+                                                )
+                                            }
+                                        })}
                                     </ul>
                                 </div>
                             )}
 
+                            {/* 西方海域 */}
                             <li className="enseiAreaElem"><p onClick={() => setSeihouOpen(!seihouOpen)}>☆西方海域</p></li>
                             {seihouOpen && (
                                 <div className="enseiListDiv">
                                     <ul className="enseiList">
-                                        <li><p className="ensei" onClick={() => onClicklistElem(42)}>通商破壊作戦</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(43)}>敵母港空襲作戦</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(44)}>潜水艦通商破壊作戦</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(45)}>西方海域封鎖作戦</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(46)}>潜水艦派遣演習</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(47)}>潜水艦派遣作戦</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(48)}>海外艦との接触</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(49)}>遠洋練習航海</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(50)}>西方海域偵察作戦</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(51)}>西方潜水艦作戦</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(52)}>欧州方面友軍との接触</p></li>
+                                        {Enseiproperties.map((value, key) => {
+                                            if (42 <= key && key <= 52) {
+                                                return (
+                                                    <li key={key}
+                                                        className="ensei" onClick={
+                                                            () => onClicklistElem(key)
+                                                        }>{value.place}</li>
+                                                )
+                                            }
+                                        })}
                                     </ul>
                                 </div>
                             )}
 
+                            {/* 南方海域 */}
                             <li className="enseiAreaElem"><p onClick={() => setNanpouOpen(!nanpouOpen)}>☆南方海域</p></li>
                             {nanpouOpen && (
                                 <div className="enseiListDiv">
                                     <ul className="enseiList">
-                                        {/* 33,34は支援任務の為欠番 */}
-                                        <li><p className="ensei" onClick={() => onClicklistElem(53)}>MO作戦</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(54)}>水上機基地建設</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(55)}>東京急行</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(56)}>東京急行{"("}弐{")"}</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(57)}>遠洋潜水艦作戦</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(58)}>水上機前線輸送</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(59)}>ラバウル方面艦隊進出</p></li>
-                                        <li><p className="ensei" onClick={() => onClicklistElem(60)}>強行鼠作戦</p></li>
+                                        {Enseiproperties.map((value, key) => {
+                                            if (53 <= key && key <= 60) {
+                                                return (
+                                                    <li key={key}
+                                                        className="ensei" onClick={
+                                                            () => onClicklistElem(key)
+                                                        }>{value.place}</li>
+                                                )
+                                            }
+                                        })}
                                     </ul>
                                 </div>
                             )}
@@ -474,7 +481,7 @@ export function EnseiCounter() {
                 {timerOpen && (
                     <div>
                         {!finishText && (
-                        <p id="enseiplace">{enseiPlace}</p>
+                            <p id="enseiplace">{enseiPlace}</p>
                         )}
                         <p id="timer">{hour}時間{minute}分{second}秒</p>
                     </div>
@@ -482,6 +489,7 @@ export function EnseiCounter() {
                 }
             </div>
             <button id="btn" type="button" onClick={() => { changeText(); operateTimer(); }}>{buttonText}</button>
+            <button className="risetbtn" type="button" onClick={() => {setEnseiPlace(""); setHour(0); setMinute(0); setSecond(0)}}>リセット</button>
         </div>
     );
 
