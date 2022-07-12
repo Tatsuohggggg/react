@@ -37,19 +37,19 @@ const App = () => {
                         <div id="nyukyoCounter">
                             <div>
                                 <p className='Counter' id='firstnyukyoCounter'>
-                                <EnseiCounter />
+                                    <Counter />
                                 </p>
 
                                 <p className='Counter' id='secondnyukyoCounter'>
-                                <EnseiCounter />
+                                    <Counter />
                                 </p>
 
                                 <p className='Counter' id='thirdnyukyoCounter'>
-                                <EnseiCounter />
+                                    <Counter />
                                 </p>
 
                                 <p className='Counter' id='fourthnyukyoCounter'>
-                                <EnseiCounter />
+                                    <Counter />
                                 </p>
                             </div>
                         </div>
@@ -58,19 +58,19 @@ const App = () => {
                         <div id="kenzouCounter">
                             <div>
                                 <p className='Counter' id='firstkenzouCounter'>
-                                <EnseiCounter />
+                                    <Counter />
                                 </p>
 
                                 <p className='Counter' id='secondkenzouCounter'>
-                                <EnseiCounter />
+                                    <Counter />
                                 </p>
 
                                 <p className='Counter' id='thirdkenzouCounter'>
-                                <EnseiCounter />
+                                    <Counter />
                                 </p>
 
                                 <p className='Counter' id='fourthkenzouCounter'>
-                                <EnseiCounter />
+                                    <Counter />
                                 </p>
                             </div>
                         </div>
@@ -81,7 +81,7 @@ const App = () => {
     </>
 }
 
-/* export function Counter() {
+export function Counter() {
     const [hour, setHour] = useState(0);
     const [minute, setMinute] = useState(0);
     const [second, setSecond] = useState(0);
@@ -184,10 +184,10 @@ const App = () => {
                 }
             </div>
             <button id="btn" type="button" onClick={() => { changeText(); operateTimer(); }}>{buttonText}</button>
-            <button className="risetbtn" type="button" onClick={() => { setHour(0); setMinute(0); setSecond(0)}}>リセット</button>
+            <button className="risetbtn" type="button" onClick={() => { setHour(0); setMinute(0); setSecond(0) }}>リセット</button>
         </div>
     )
-} */
+}
 
 
 
@@ -214,7 +214,6 @@ export function EnseiCounter() {
     const [nanseiOpen, setNanseiOpen] = useState(false);
     const [seihouOpen, setSeihouOpen] = useState(false);
     const [nanpouOpen, setNanpouOpen] = useState(false);
-    const [tyubuOpen, setTyubuOpen] = useState(false);
     const [startTimeValue, setStartTimeValue] = useState(0);
     const [nowTimeValue, setNowTimeValue] = useState(0);
     const [countDownValue, setCountDownValue] = useState(0);
@@ -489,7 +488,7 @@ export function EnseiCounter() {
                 }
             </div>
             <button id="btn" type="button" onClick={() => { changeText(); operateTimer(); }}>{buttonText}</button>
-            <button className="risetbtn" type="button" onClick={() => {setEnseiPlace(""); setHour(0); setMinute(0); setSecond(0)}}>リセット</button>
+            <button className="risetbtn" type="button" onClick={() => { setEnseiPlace(""); setHour(0); setMinute(0); setSecond(0) }}>リセット</button>
         </div>
     );
 
