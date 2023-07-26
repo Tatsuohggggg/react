@@ -2,7 +2,7 @@
 
 function APICall(path, req, callback) {
   const url =
-    "https://w5hhulav48.execute-api.ap-southeast-2.amazonaws.com/" ||
+    "https://w5hhulav48.execute-api.ap-southeast-2.amazonaws.com" ||
     process.env.REACT_APP_API_URL;
   const request = Object.assign(
     {
